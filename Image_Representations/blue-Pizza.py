@@ -5,23 +5,19 @@ Created on Wed Sep  8 14:19:08 2021
 
 @author: yasin
 """
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+
+
 import cv2
 
+img = cv2.imread("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/images/pizza_bluescreen.jpg")
 
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+mask = cv2.inRange(hsv, (110, 100, 100), (130, 255, 255))
+inv_mask = cv2.bitwise_not(mask)
 
-image = cv2.imread("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/images/pizza_bluescreen.jpg")
-print("image dimensions: ", image.shape)
-print(image.dtype)
+pizza = cv2.bitwise_and(img, img, mask=inv_mask)
 
-
-rgb_image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
-
-plt.imshow(rgb_image)
-
-rgb_image[:,:,2] = np.zeros([rgb_image.shape[0], rgb_image.shape[1]])
-
-
-plt.imshow(rgb_image)
+cv2.imshow("img", img)
+cv2.imshow("mask", mask)
+cv2.imshow("pizza", pizza)
+cv2.waitKey()
