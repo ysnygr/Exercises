@@ -13,12 +13,11 @@ import glob
 Image_list = []
  
    
-for x in glob.glob("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/day_night_images/training"):
     
 
 
 
-    for img in glob.glob("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/day_night_images/training/day/*.jpg"):
+for img in glob.glob("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/day_night_images/training/day/*.jpg"):
             
         img_read = cv2.imread(img)
         
@@ -36,7 +35,7 @@ for x in glob.glob("/home/yasin/Documents/Desktop/Work/Exercises/Image_Represent
         
        
     
-    for img in glob.glob("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/day_night_images/training/night/*.jpg"):
+for img in glob.glob("/home/yasin/Documents/Desktop/Work/Exercises/Image_Representations/day_night_images/training/night/*.jpg"):
             
         img_read = cv2.imread(img)
         
