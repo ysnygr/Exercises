@@ -19,7 +19,7 @@ def load_dataset(path_folder):
     for folder_name  in f_list:
         folder = path.join(path_folder , folder_name, "*.jpg") 
         for img in glob.glob(folder):           
-            img_read = cv2.imread(img,cv2.IMREAD_UNCHANGED)
+            img_read = cv2.imread(img)
             image_list.append((img_read , folder_name ))
             
     return image_list
