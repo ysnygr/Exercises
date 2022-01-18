@@ -22,4 +22,4 @@ for i, subplot in zip(range(3), plots):
     temp[:,:,i] = rgb_image[:,:,i]
     subplot.imshow(temp)
     subplot.set_axis_off()
-plt.show()
+    plt.show()
