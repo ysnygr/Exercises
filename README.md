@@ -1,1 +1,1 @@
-These are general exercises about Image Processing.
+These scripts are developed in scope of Udacity Computer Vision Nanodegree program.
